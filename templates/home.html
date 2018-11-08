@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form">
+  
+    <form method="POST" action="{{ url_for('home') }}">
+        <div class="radio">
+        <input type="radio" name="triptype" value="one" checked> <h3>One way</h3>
+        <input type="radio" name="triptype" value="round" ><h3>Round trip </h3><br>
+        </div>
+        <div class="departdetail">
+        <h3>From</h3>
+        <select name="tripfrom" >
+            <option value="Important Airports" disabled>Important Airports</option><option value="Ahmedabad [AMD]">Ahmedabad [AMD]</option><option value="Amritsar [ATQ]">Amritsar [ATQ]</option><option value="Aurangabad [IXU]">Aurangabad [IXU]</option>
+            <option value="Bangalore [BLR]">Bangalore [BLR]</option><option value="Bhubaneswar [BBI]">Bhubaneswar [BBI]</option><option value="Chandigarh [IXC]">Chandigarh [IXC]</option><option value="Chennai [MAA]">Chennai [MAA]</option>
+            <option value="Cochin [COK]">Cochin [COK]</option><option value="Coimbatore [CJB]">Coimbatore [CJB]</option><option value="Goa [GOI]">Goa [GOI]</option><option value="Guwahati [GAU]">Guwahati [GAU]</option>
+            <option value="Hyderabad [HYD]">Hyderabad [HYD]</option><option value="Indore [IDR]">Indore [IDR]</option><option value="Jaipur [JAI]">Jaipur [JAI]</option><option value="Jammu [IXJ]">Jammu [IXJ]</option>
+            <option value="Kolkata [CCU]">Kolkata [CCU]</option><option value="Kozhikode [CCJ]">Kozhikode [CCJ]</option><option value="Lucknow [LKO]">Lucknow [LKO]</option><option value="Mangalore [IXE]">Mangalore [IXE]</option>
+            <option value="Mumbai [BOM]">Mumbai [BOM]</option><option value="New Delhi [DEL]">New Delhi [DEL]</option><option value="Patna [PAT]">Patna [PAT]</option><option value="Port Blair [IXZ]">Port Blair [IXZ]</option>
+            <option value="Rajahmundry [RJA]">Rajahmundry [RJA]</option><option value="Ranchi [IXR]">Ranchi [IXR]</option><option value="Srinagar [SXR]">Srinagar [SXR]</option><option value="Thiruvananthapuram [TRV]">Thiruvananthapuram [TRV]</option>
+            <option value="Tiruchirapally [TRZ]">Tiruchirapally [TRZ]</option><option value="Varanasi [VNS]">Varanasi [VNS]</option><option value="Vijayawada [VGA]">Vijayawada [VGA]</option><option value="Vishakhapatnam [VTZ]">Vishakhapatnam [VTZ]</option>
+
+            <option value="All Airports" disabled>All Airports</option>
+            <option value="Adampur Airport [AIP]">Adampur Airport [AIP]</option><option value="Agartala [IXA]">Agartala [IXA]</option><option value="Agatti Island [AGX]">Agatti Island [AGX]</option><option value="Agra [AGR]">Agra [AGR]</option>
+            <option value="Ahmedabad [AMD]">Ahmedabad [AMD]</option><option value="Aizawl [AJL]">Aizawl [AJL]</option><option value="Akola [AKD]">Akola [AKD]</option><option value="Allahabad [IXD]">Allahabad [IXD]</option>
+            <option value="Amritsar [ATQ]">Amritsar [ATQ]</option><option value="Aurangabad [IXU]">Aurangabad [IXU]</option><option value="Bagdogra [IXB]">Bagdogra [IXB]</option><option value="Bangalore [BLR]">Bangalore [BLR]</option>
+            <option value="Bathinda [BUP]">Bathinda [BUP]</option><option value="Belgaum [IXG]">Belgaum [IXG]</option><option value="Bellary [BEP]">Bellary [BEP]</option><option value="Bhatinda Airport [BUP]">Bhatinda Airport [BUP]</option>
+            <option value="Bhavnagar [BHU]">Bhavnagar [BHU]</option><option value="Bhopal [BHO]">Bhopal [BHO]</option><option value="Bhubaneswar [BBI]">Bhubaneswar [BBI]</option><option value="Bhuj [BHJ]">Bhuj [BHJ]</option>
+            <option value="Bikaner [BKB]">Bikaner [BKB]</option><option value="Bilaspur [PAB]">Bilaspur [PAB]</option><option value="Car Nicobar [CBD]">Car Nicobar [CBD]</option><option value="Chandigarh [IXC]">Chandigarh [IXC]</option>
+            <option value="Chennai [MAA]">Chennai [MAA]</option><option value="Cochin [COK]">Cochin [COK]</option><option value="Coimbatore [CJB]">Coimbatore [CJB]</option><option value="Cooch Behar [COH]">Cooch Behar [COH]</option>
+            <option value="Cuddapah [CDP]">Cuddapah [CDP]</option><option value="CUDDAPAH [CDP]">CUDDAPAH [CDP]</option><option value="Daman [NMB]">Daman [NMB]</option><option value="Dehra Dun [DED]">Dehra Dun [DED]</option>
+            <option value="Dharamsala [DHM]">Dharamsala [DHM]</option><option value="Dibrugarh [DIB]">Dibrugarh [DIB]</option><option value="Dimapur [DMU]">Dimapur [DMU]</option><option value="Diu [DIU]">Diu [DIU]</option>
+            <option value="Durgapur [RDP]">Durgapur [RDP]</option><option value="Gaya [GAY]">Gaya [GAY]</option><option value="GFDG [AAA]">GFDG [AAA]</option><option value="Goa [GOI]">Goa [GOI]</option>
+            <option value="Gorakhpur [GOP]">Gorakhpur [GOP]</option><option value="Guwahati [GAU]">Guwahati [GAU]</option><option value="Gwalior [GWL]">Gwalior [GWL]</option><option value="Hubli [HBX]">Hubli [HBX]</option>
+            <option value="Hyderabad [HYD]">Hyderabad [HYD]</option><option value="Imphal [IMF]">Imphal [IMF]</option><option value="Indore [IDR]">Indore [IDR]</option><option value="Jabalpur [JLR]">Jabalpur [JLR]</option>
+            <option value="Jagdalpur [JGB]">Jagdalpur [JGB]</option><option value="Jaipur [JAI]">Jaipur [JAI]</option><option value="Jaisalmer [JSA]">Jaisalmer [JSA]</option><option value="Jammu [IXJ]">Jammu [IXJ]</option>
+            <option value="Jamnagar [JGA]">Jamnagar [JGA]</option><option value="Jamshedpur [IXW]">Jamshedpur [IXW]</option><option value="Jeypore [PYB]">Jeypore [PYB]</option><option value="Jodhpur [JDH]">Jodhpur [JDH]</option>
+            <option value="Jorhat [JRH]">Jorhat [JRH]</option><option value="Kailashahar [IXH]">Kailashahar [IXH]</option><option value="KAILASHAHAR [IHX]">KAILASHAHAR [IHX]</option><option value="Kandla [IXY]">Kandla [IXY]</option>
+            <option value="KANNUR [CNN]">KANNUR [CNN]</option><option value="Kanpur [KNU]">Kanpur [KNU]</option><option value="Keshod [IXK]">Keshod [IXK]</option><option value="Khajuraho [HJR]">Khajuraho [HJR]</option>
+            <option value="Kishangarh [KQH]">Kishangarh [KQH]</option><option value="Kolhapur [KLH]">Kolhapur [KLH]</option><option value="Kolkata [CCU]">Kolkata [CCU]</option><option value="Kota [KTU]">Kota [KTU]</option>
+            <option value="Kozhikode [CCJ]">Kozhikode [CCJ]</option><option value="Kulu [KUU]">Kulu [KUU]</option><option value="LATUR [LTU]">LATUR [LTU]</option><option value="Leh [IXL]">Leh [IXL]</option>
+            <option value="Lilabari [IXI]">Lilabari [IXI]</option><option value="Lucknow [LKO]">Lucknow [LKO]</option><option value="Ludhiana [LUH]">Ludhiana [LUH]</option><option value="Madurai [IXM]">Madurai [IXM]</option>
+            <option value="Malda [LDA]">Malda [LDA]</option><option value="Mangalore [IXE]">Mangalore [IXE]</option><option value="Mumbai [BOM]">Mumbai [BOM]</option><option value="Mysore [MYQ]">Mysore [MYQ]</option>
+            <option value="Nagpur [NAG]">Nagpur [NAG]</option><option value="Nanded [NDC]">Nanded [NDC]</option><option value="Nasik [ISK]">Nasik [ISK]</option><option value="New Delhi [DEL]">New Delhi [DEL]</option>
+            <option value="Neyveli [NVY]">Neyveli [NVY]</option><option value="Neyvelli [NVY]">Neyvelli [NVY]</option><option value="Pakyong [PYG]">Pakyong [PYG]</option><option value="Pantnagar [PGH]">Pantnagar [PGH]</option>
+            <option value="Pathankot [IXP]">Pathankot [IXP]</option><option value="Patna [PAT]">Patna [PAT]</option><option value="Pondicherry [PNY]">Pondicherry [PNY]</option><option value="Porbandar [PBD]">Porbandar [PBD]</option>
+            <option value="Port Blair [IXZ]">Port Blair [IXZ]</option><option value="Pune (Poona) [PNQ]">Pune (Poona) [PNQ]</option><option value="Puttaparthi [PUT]">Puttaparthi [PUT]</option><option value="Raipur [RPR]">Raipur [RPR]</option>
+            <option value="Rajahmundry [RJA]">Rajahmundry [RJA]</option><option value="Rajkot [RAJ]">Rajkot [RAJ]</option><option value="Rajouri [RJI]">Rajouri [RJI]</option><option value="Ranchi [IXR]">Ranchi [IXR]</option>
+            <option value="Rewa [REW]">Rewa [REW]</option><option value="Rourkela [RRK]">Rourkela [RRK]</option><option value="Salem [SXV]">Salem [SXV]</option><option value="Satna [TNI]">Satna [TNI]</option>
+            <option value="Shillong [SHL]">Shillong [SHL]</option><option value="Shimla [SLV]">Shimla [SLV]</option><option value="Shirdi [SAG]">Shirdi [SAG]</option><option value="Sholapur [SSE]">Sholapur [SSE]</option>
+            <option value="Silchar [IXS]">Silchar [IXS]</option><option value="Srinagar [SXR]">Srinagar [SXR]</option><option value="Surat [STV]">Surat [STV]</option><option value="Tezpur [TEZ]">Tezpur [TEZ]</option>
+            <option value="Tezu [TEI]">Tezu [TEI]</option><option value="Thiruvananthapuram [TRV]">Thiruvananthapuram [TRV]</option><option value="Tiruchirapally [TRZ]">Tiruchirapally [TRZ]</option><option value="Tirupati [TIR]">Tirupati [TIR]</option>
+            <option value="Tuticorin [TCR]">Tuticorin [TCR]</option><option value="Udaipur [UDR]">Udaipur [UDR]</option><option value="Vadodara [BDQ]">Vadodara [BDQ]</option><option value="Varanasi [VNS]">Varanasi [VNS]</option>
+            <option value="VIDAYNAGAR [VDY]">VIDAYNAGAR [VDY]</option><option value="Vijayawada [VGA]">Vijayawada [VGA]</option><option value="Vishakhapatnam [VTZ]">Vishakhapatnam [VTZ]</option><option value="Warranga [WGC]">Warranga [WGC]</option>
+        </select>
+        
+        <h3>To</h3>
+        <select name="tripto" >
+                <option value="Important Airports" disabled>Important Airports</option><option value="Ahmedabad [AMD]">Ahmedabad [AMD]</option><option value="Amritsar [ATQ]">Amritsar [ATQ]</option><option value="Aurangabad [IXU]">Aurangabad [IXU]</option>
+                <option value="Bangalore [BLR]">Bangalore [BLR]</option><option value="Bhubaneswar [BBI]">Bhubaneswar [BBI]</option><option value="Chandigarh [IXC]">Chandigarh [IXC]</option><option value="Chennai [MAA]">Chennai [MAA]</option>
+                <option value="Cochin [COK]">Cochin [COK]</option><option value="Coimbatore [CJB]">Coimbatore [CJB]</option><option value="Goa [GOI]">Goa [GOI]</option><option value="Guwahati [GAU]">Guwahati [GAU]</option>
+                <option value="Hyderabad [HYD]">Hyderabad [HYD]</option><option value="Indore [IDR]">Indore [IDR]</option><option value="Jaipur [JAI]">Jaipur [JAI]</option><option value="Jammu [IXJ]">Jammu [IXJ]</option>
+                <option value="Kolkata [CCU]">Kolkata [CCU]</option><option value="Kozhikode [CCJ]">Kozhikode [CCJ]</option><option value="Lucknow [LKO]">Lucknow [LKO]</option><option value="Mangalore [IXE]">Mangalore [IXE]</option>
+                <option value="Mumbai [BOM]">Mumbai [BOM]</option><option value="New Delhi [DEL]">New Delhi [DEL]</option><option value="Patna [PAT]">Patna [PAT]</option><option value="Port Blair [IXZ]">Port Blair [IXZ]</option>
+                <option value="Rajahmundry [RJA]">Rajahmundry [RJA]</option><option value="Ranchi [IXR]">Ranchi [IXR]</option><option value="Srinagar [SXR]">Srinagar [SXR]</option><option value="Thiruvananthapuram [TRV]">Thiruvananthapuram [TRV]</option>
+                <option value="Tiruchirapally [TRZ]">Tiruchirapally [TRZ]</option><option value="Varanasi [VNS]">Varanasi [VNS]</option><option value="Vijayawada [VGA]">Vijayawada [VGA]</option><option value="Vishakhapatnam [VTZ]">Vishakhapatnam [VTZ]</option>
+    
+                <option value="All Airports" disabled>All Airports</option>
+                <option value="Adampur Airport [AIP]">Adampur Airport [AIP]</option><option value="Agartala [IXA]">Agartala [IXA]</option><option value="Agatti Island [AGX]">Agatti Island [AGX]</option><option value="Agra [AGR]">Agra [AGR]</option>
+                <option value="Ahmedabad [AMD]">Ahmedabad [AMD]</option><option value="Aizawl [AJL]">Aizawl [AJL]</option><option value="Akola [AKD]">Akola [AKD]</option><option value="Allahabad [IXD]">Allahabad [IXD]</option>
+                <option value="Amritsar [ATQ]">Amritsar [ATQ]</option><option value="Aurangabad [IXU]">Aurangabad [IXU]</option><option value="Bagdogra [IXB]">Bagdogra [IXB]</option><option value="Bangalore [BLR]">Bangalore [BLR]</option>
+                <option value="Bathinda [BUP]">Bathinda [BUP]</option><option value="Belgaum [IXG]">Belgaum [IXG]</option><option value="Bellary [BEP]">Bellary [BEP]</option><option value="Bhatinda Airport [BUP]">Bhatinda Airport [BUP]</option>
+                <option value="Bhavnagar [BHU]">Bhavnagar [BHU]</option><option value="Bhopal [BHO]">Bhopal [BHO]</option><option value="Bhubaneswar [BBI]">Bhubaneswar [BBI]</option><option value="Bhuj [BHJ]">Bhuj [BHJ]</option>
+                <option value="Bikaner [BKB]">Bikaner [BKB]</option><option value="Bilaspur [PAB]">Bilaspur [PAB]</option><option value="Car Nicobar [CBD]">Car Nicobar [CBD]</option><option value="Chandigarh [IXC]">Chandigarh [IXC]</option>
+                <option value="Chennai [MAA]">Chennai [MAA]</option><option value="Cochin [COK]">Cochin [COK]</option><option value="Coimbatore [CJB]">Coimbatore [CJB]</option><option value="Cooch Behar [COH]">Cooch Behar [COH]</option>
+                <option value="Cuddapah [CDP]">Cuddapah [CDP]</option><option value="CUDDAPAH [CDP]">CUDDAPAH [CDP]</option><option value="Daman [NMB]">Daman [NMB]</option><option value="Dehra Dun [DED]">Dehra Dun [DED]</option>
+                <option value="Dharamsala [DHM]">Dharamsala [DHM]</option><option value="Dibrugarh [DIB]">Dibrugarh [DIB]</option><option value="Dimapur [DMU]">Dimapur [DMU]</option><option value="Diu [DIU]">Diu [DIU]</option>
+                <option value="Durgapur [RDP]">Durgapur [RDP]</option><option value="Gaya [GAY]">Gaya [GAY]</option><option value="GFDG [AAA]">GFDG [AAA]</option><option value="Goa [GOI]">Goa [GOI]</option>
+                <option value="Gorakhpur [GOP]">Gorakhpur [GOP]</option><option value="Guwahati [GAU]">Guwahati [GAU]</option><option value="Gwalior [GWL]">Gwalior [GWL]</option><option value="Hubli [HBX]">Hubli [HBX]</option>
+                <option value="Hyderabad [HYD]">Hyderabad [HYD]</option><option value="Imphal [IMF]">Imphal [IMF]</option><option value="Indore [IDR]">Indore [IDR]</option><option value="Jabalpur [JLR]">Jabalpur [JLR]</option>
+                <option value="Jagdalpur [JGB]">Jagdalpur [JGB]</option><option value="Jaipur [JAI]">Jaipur [JAI]</option><option value="Jaisalmer [JSA]">Jaisalmer [JSA]</option><option value="Jammu [IXJ]">Jammu [IXJ]</option>
+                <option value="Jamnagar [JGA]">Jamnagar [JGA]</option><option value="Jamshedpur [IXW]">Jamshedpur [IXW]</option><option value="Jeypore [PYB]">Jeypore [PYB]</option><option value="Jodhpur [JDH]">Jodhpur [JDH]</option>
+                <option value="Jorhat [JRH]">Jorhat [JRH]</option><option value="Kailashahar [IXH]">Kailashahar [IXH]</option><option value="KAILASHAHAR [IHX]">KAILASHAHAR [IHX]</option><option value="Kandla [IXY]">Kandla [IXY]</option>
+                <option value="KANNUR [CNN]">KANNUR [CNN]</option><option value="Kanpur [KNU]">Kanpur [KNU]</option><option value="Keshod [IXK]">Keshod [IXK]</option><option value="Khajuraho [HJR]">Khajuraho [HJR]</option>
+                <option value="Kishangarh [KQH]">Kishangarh [KQH]</option><option value="Kolhapur [KLH]">Kolhapur [KLH]</option><option value="Kolkata [CCU]">Kolkata [CCU]</option><option value="Kota [KTU]">Kota [KTU]</option>
+                <option value="Kozhikode [CCJ]">Kozhikode [CCJ]</option><option value="Kulu [KUU]">Kulu [KUU]</option><option value="LATUR [LTU]">LATUR [LTU]</option><option value="Leh [IXL]">Leh [IXL]</option>
+                <option value="Lilabari [IXI]">Lilabari [IXI]</option><option value="Lucknow [LKO]">Lucknow [LKO]</option><option value="Ludhiana [LUH]">Ludhiana [LUH]</option><option value="Madurai [IXM]">Madurai [IXM]</option>
+                <option value="Malda [LDA]">Malda [LDA]</option><option value="Mangalore [IXE]">Mangalore [IXE]</option><option value="Mumbai [BOM]">Mumbai [BOM]</option><option value="Mysore [MYQ]">Mysore [MYQ]</option>
+                <option value="Nagpur [NAG]">Nagpur [NAG]</option><option value="Nanded [NDC]">Nanded [NDC]</option><option value="Nasik [ISK]">Nasik [ISK]</option><option value="New Delhi [DEL]">New Delhi [DEL]</option>
+                <option value="Neyveli [NVY]">Neyveli [NVY]</option><option value="Neyvelli [NVY]">Neyvelli [NVY]</option><option value="Pakyong [PYG]">Pakyong [PYG]</option><option value="Pantnagar [PGH]">Pantnagar [PGH]</option>
+                <option value="Pathankot [IXP]">Pathankot [IXP]</option><option value="Patna [PAT]">Patna [PAT]</option><option value="Pondicherry [PNY]">Pondicherry [PNY]</option><option value="Porbandar [PBD]">Porbandar [PBD]</option>
+                <option value="Port Blair [IXZ]">Port Blair [IXZ]</option><option value="Pune (Poona) [PNQ]">Pune (Poona) [PNQ]</option><option value="Puttaparthi [PUT]">Puttaparthi [PUT]</option><option value="Raipur [RPR]">Raipur [RPR]</option>
+                <option value="Rajahmundry [RJA]">Rajahmundry [RJA]</option><option value="Rajkot [RAJ]">Rajkot [RAJ]</option><option value="Rajouri [RJI]">Rajouri [RJI]</option><option value="Ranchi [IXR]">Ranchi [IXR]</option>
+                <option value="Rewa [REW]">Rewa [REW]</option><option value="Rourkela [RRK]">Rourkela [RRK]</option><option value="Salem [SXV]">Salem [SXV]</option><option value="Satna [TNI]">Satna [TNI]</option>
+                <option value="Shillong [SHL]">Shillong [SHL]</option><option value="Shimla [SLV]">Shimla [SLV]</option><option value="Shirdi [SAG]">Shirdi [SAG]</option><option value="Sholapur [SSE]">Sholapur [SSE]</option>
+                <option value="Silchar [IXS]">Silchar [IXS]</option><option value="Srinagar [SXR]">Srinagar [SXR]</option><option value="Surat [STV]">Surat [STV]</option><option value="Tezpur [TEZ]">Tezpur [TEZ]</option>
+                <option value="Tezu [TEI]">Tezu [TEI]</option><option value="Thiruvananthapuram [TRV]">Thiruvananthapuram [TRV]</option><option value="Tiruchirapally [TRZ]">Tiruchirapally [TRZ]</option><option value="Tirupati [TIR]">Tirupati [TIR]</option>
+                <option value="Tuticorin [TCR]">Tuticorin [TCR]</option><option value="Udaipur [UDR]">Udaipur [UDR]</option><option value="Vadodara [BDQ]">Vadodara [BDQ]</option><option value="Varanasi [VNS]">Varanasi [VNS]</option>
+                <option value="VIDAYNAGAR [VDY]">VIDAYNAGAR [VDY]</option><option value="Vijayawada [VGA]">Vijayawada [VGA]</option><option value="Vishakhapatnam [VTZ]">Vishakhapatnam [VTZ]</option><option value="Warranga [WGC]">Warranga [WGC]</option>
+               
+        </select>
+        </div>
+        <div class="departdetail">
+        <h3>Departure</h3>
+        <input type="date" name="departtime" ><br>
+        <h3>Return</h3>
+        <input type="date" name="returntime" ><br>
+       
+        </div>
+        
+        <div class="departdetail">
+            <label for="travelclass">Travel class</label>
+        <select name="travelclass" >
+            <option value="Economy">Economy</option>
+            <option value="Business Class">Business Class</option>
+            <option value="First Class">First Class</option>
+            <option value="Premium Economy">Premium Economy</option>
+            
+        </select>
+        <br>
+        <div class="left">
+        <label for="adults">Adult</label><br>
+        <select name="adults" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+         </div>
+         <div class="left" >
+        <label for="childs">Child</label><br>
+        <select name="childs" >
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                
+        </select>
+        </div>
+        <div class="left">
+        <label for="infants">Infant</label><br>
+        <select name="infants" >
+                <option value="0">0</option>
+                <option value="1">1</option>
+        </select> 
+        </div>
+        <div class="left">
+        <label for="airlines">Airline Preference</label><br>
+        <select name="airlines" >
+                <option value="All Airlines">All Airlines</option>
+                <option value="Jet Airways">Jet Airways</option>
+                <option value="Air India">Air India</option>
+                <option value="Spice Jet">Spice Jet</option>
+                <option value="AL Express">AL Express</option>
+                <option value="Tru Jet">Tru Jet</option>
+                <option value="Vistara">Vistara</option>
+                <option value="Indigo">Indigo</option>
+                <option value="Go Air">Go Air</option>
+                <option value="Air Asia">Air Asia</option>
+        </select>  
+        </div>  
+        <button type="submit">Search</button> 
+    </div>  
+    <div class="clear"></div>
+    </form>
+</div>
+
+{% if error %}
+<div class="error-space">
+<h2 class="error">{{error}}</h2>
+</div>
+{% endif %}
+{% if data %}
+<div class="main">
+        <table>
+            <tr>
+                <td>Airline</td>
+                <td>Departure</td>
+                <td>Arrival</td>
+                <td>Duration</td>
+                <td> </td>
+                <td>Fare</td>
+            </tr>
+        
+{% for block in data %}
+    <tr>
+            
+        <td>
+                <img src="{{block['airlinedetail']['src']}}" alt="">
+               
+               <h3>{{block['flight']}}</h3>
+                <h3>{{block['flightname']}}</h3>
+                <p>{{block['airlinedetail'][1]}}</p>
+                {% if block['airlinedetail'][2] %}
+                    <p>{{block['airlinedetail'][2]}}</p>
+                    {% endif %}
+           
+        </td>
+        <td>
+            
+                <h3>{{block['departdate']}}</h3>
+                <h3>{{block['departdetail']}}</h3>
+        </td>   
+        <td>
+            
+            <h3>{{block['arrivaldate']}}</h3>
+            <h3>{{block['arrivaldetail']}}</h3>
+               
+        </td> 
+        <td>
+            
+                <h3>{{block['duration']}}</h3>
+           
+        </td>  
+        <td>
+           
+                <p>{{block['limitation']}}</p>
+            
+        </td> 
+        <td>   
+            
+                <h3>{{block['fare']}}</h3>
+            
+            <a class="link" href="{{ url_for('singlepage',id=block.id) }}">
+                Book
+            </a>
+           
+        </td>    
+
+</tr>
+
+{% endfor %}
+</table>
+</div>
+{% endif %}
+
+{% if goingdata and comingdata %}
+<div class="main">
+{% for row in goingdata %}
+<div class="block">
+<p>{{ row }}</p>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}
